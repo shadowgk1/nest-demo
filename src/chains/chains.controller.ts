@@ -14,4 +14,9 @@ export class ChainsController {
     async generalBlog(@Body() body: {keywords: string,style: string}) {
         return this.chainsService.generalBlog(body.keywords, body.style);
     }
+
+    @Post('/router')
+    async smartRouter(@Body() body: {question:string}) {
+        return this.chainsService.smartRouter(body.question);
+    }
 }

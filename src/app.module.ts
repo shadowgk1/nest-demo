@@ -8,9 +8,10 @@ import { ConfigModule } from '@nestjs/config';
 import { ModelsModule } from './models/models.module';
 import { PromptsModule } from './prompts/prompts.module';
 import { ChainsModule } from './chains/chains.module';
+import { AgentsModule } from './agents/agents.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }),UserModule, PrismaModule, PostModule, ModelsModule, PromptsModule, ChainsModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }),UserModule, PrismaModule, PostModule, ModelsModule, PromptsModule, ChainsModule, AgentsModule],
   controllers: [AppController],
   providers: [AppService],
 })
