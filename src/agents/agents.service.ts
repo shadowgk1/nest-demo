@@ -4,7 +4,6 @@ import { config } from '../config';
 import { tool } from '@langchain/core/tools';
 import { z } from 'zod';
 import { SystemMessage, HumanMessage} from '@langchain/core/messages';
-import { AIMessage, ToolMessage } from '@langchain/core/messages';
 
 @Injectable()
 export class AgentsService {
