@@ -1,32 +1,32 @@
 import { Body, Controller, Delete, Get, Post } from '@nestjs/common';
-import { RagService } from './rag.service';
+import { RagdbService } from './ragdb.service';
 
-@Controller('rag')
-export class RagController {
-    constructor(private readonly ragService: RagService) {}
+@Controller('ragdb')
+export class RagdbController {
+    constructor(private readonly ragdbService: RagdbService) {}
 
     @Post('read')
     async readDocuments(@Body() body:{documents:{id: string,content: string,source?: string}[]}) {
-        return this.ragService.readDocuments(body.documents);
+        return this.ragdbService.readDocuments(body.documents);
     }
 
     @Get('load')
     async loadDocuments() {
-        return this.ragService.loadDocuments();
+        return this.ragdbService.loadDocuments();
     }
 
     @Post('search')
     async searchDocuments(@Body() body:{query: string;topK: number}) {
-        return this.ragService.searchDocuments(body.query, body.topK);
+        return this.ragdbService.searchDocuments(body.query, body.topK);
     }
 
     @Post('query')
     async queryDocuments(@Body() body:{question: string;topK: number}) {
-        return this.ragService.queryDocuments(body.question, body.topK);
+        return this.ragdbService.queryDocuments(body.question, body.topK);
     }
 
     @Delete('delete')
     async deleteDocuments() {
-        return this.ragService.deleteDocuments();
+        return this.ragdbService.deleteDocuments();
     }
 }
