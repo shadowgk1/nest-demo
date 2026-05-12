@@ -13,9 +13,11 @@ import { MemoryModule } from './memory/memory.module';
 import { RagModule } from './rag/rag.module';
 import { FunctionCallingModule } from './function-calling/function-calling.module';
 import { RagdbModule } from './ragdb/ragdb.module';
+import { McpClientModule } from './mcp-client/mcp-client.module';
+import { McpAgentModule } from './mcp-agent/mcp-agent.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }),UserModule, PrismaModule, PostModule, ModelsModule, PromptsModule, ChainsModule, AgentsModule, MemoryModule, RagModule, FunctionCallingModule, RagdbModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }),UserModule, PrismaModule, PostModule, ModelsModule, PromptsModule, ChainsModule, AgentsModule, MemoryModule, RagModule, FunctionCallingModule, RagdbModule, McpClientModule, McpAgentModule],
   controllers: [AppController],
   providers: [AppService],
 })
